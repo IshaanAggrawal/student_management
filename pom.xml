@@ -12,7 +12,7 @@
     <artifactId>Lab1</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Lab1</name>
-    <description>Lab1</description>
+    <description>Student Management REST API - Spring Boot, Spring Data JPA, MySQL, Validation and Spring Security</description>
     <url/>
     <licenses>
         <license/>
@@ -49,6 +49,16 @@
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
             <optional>true</optional>
+        </dependency>
+        <!-- Exp 7: Bean Validation (@Valid, @NotBlank, @Email) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <!-- Exp 9: Spring Security (HTTP Basic authentication) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -1,11 +1,15 @@
 package com.example.lab1.repository;
 
-import com.example.lab1.student;
+import com.example.lab1.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
+
 import java.util.List;
 
-public interface StudentRepository extends JpaRepository<student, Integer> {
-    List<student> findByName(String name);
-    List<student> findByNameContaining(String keyword);
-    List<student> findByEmail(String email);
+public interface StudentRepository extends JpaRepository<Student, Integer> {
+
+    List<Student> findByName(String name);
+
+    List<Student> findByNameContaining(String keyword);
+
+    List<Student> findByEmail(String email);
 }
