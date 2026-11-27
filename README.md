@@ -14,8 +14,27 @@ A Spring Boot REST service for managing students and the courses they take. I bu
 
 ---
 
+## Experiments
+
+| Exp | Title | Status |
+|-----|-------|--------|
+| 1–2 | Basic concepts, project setup and installation of required software | ✅ Completed |
+| 3 | CRUD REST API with in-memory storage | ✅ Completed |
+| 4 | MySQL connectivity with a JPA entity and Spring Data repository | ✅ Completed |
+| 5 | Spring Data JPA: derived queries, pagination and sorting | ✅ Completed |
+| 6 | One-to-many relationship (Student → Course) | ✅ Completed |
+| 7 | Input validation and centralized exception handling (`@Valid`, `@ExceptionHandler`) | ✅ Completed |
+| 8 | REST API testing with cURL and automated tests (JUnit + MockMvc) | ✅ Completed |
+| 9 | HTTP Basic authentication with Spring Security | ✅ Completed |
+| 10–11 | Deployment with Docker | Not covered in this course |
+
+A detailed breakdown of what each experiment added is in [Experiment-wise progress](#experiment-wise-progress).
+
+---
+
 ## Table of contents
 
+- [Experiments](#experiments)
 - [What it does](#what-it-does)
 - [Repository layout](#repository-layout)
 - [Running locally](#running-locally)
@@ -257,9 +276,9 @@ curl -i -u admin:admin123 http://localhost:8081/students/11           # 404
 
 | Exp | Focus | Work done |
 |-----|-------|-----------|
-| 1–2 | Environment setup | Installed the JDK and IntelliJ, generated the project with Spring Initializr, moved the server to port 8081, and added the `/hello` and `/student` endpoints |
+| 1–2 | Setup and installation | Covered the basic concepts and installed the required software (JDK 17 and IntelliJ IDEA). Created the Spring Boot project with Spring Initializr and checked that it runs on port 8081 |
 | 3 | CRUD over REST | Built `GET`, `POST`, `PUT` and `DELETE` on `/students`, backed by an in-memory `ArrayList`; used `@RequestBody`, `@PathVariable`, and `ResponseEntity` to return 404 for missing students |
-| 4 | Persistence | Added Spring Data JPA and the MySQL driver, annotated `Student` as an `@Entity`, wrote `StudentRepository`, and switched the CRUD endpoints from the list to the database |
+| 4 | Persistence | Installed MySQL 8 and created the database, added Spring Data JPA and the MySQL driver, annotated `Student` as an `@Entity`, wrote `StudentRepository`, and switched the CRUD endpoints from the list to the database |
 | 5 | Querying | Added derived queries (`findByName`, `findByNameContaining`, `findByEmail`), paging with `Pageable` and sorting with `Sort` |
 | 6 | Relationships | Created the `Course` entity, linked it to `Student` with `@OneToMany` / `@ManyToOne` through a `student_id` foreign key, added `CourseRepository` and `POST /students/{id}/courses`, and stopped infinite JSON nesting with `@JsonManagedReference` / `@JsonBackReference` |
 | 7 | Validation | Added `spring-boot-starter-validation`, put `@NotBlank` and `@Email` on the fields, enabled checking with `@Valid` on POST and PUT, and wrote `GlobalExceptionHandler` so failures return field-by-field 400 responses |
